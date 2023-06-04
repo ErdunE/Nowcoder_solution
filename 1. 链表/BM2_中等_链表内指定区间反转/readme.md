@@ -1,11 +1,30 @@
-## BM1 简单 反转链表
+## BM2 中等 链表内指定区间反转
 
-#### 题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+#### 题目链接 [BM2 链表内指定区间反转](https://www.nowcoder.com/practice/b58434e200a648c589ca2063f1faf58c?tpId=295&tqId=654&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295)
+
+> ### 描述
+> 将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转，要求时间复杂度 O(n)，空间复杂度 O(1)。\
+> 例如：\
+> 给出的链表为 1→2→3→4→5→NULL, m=2,n=4,\
+> 返回 1→4→3→2→5→NULL.
+>
+> 数据范围： 链表长度 0<size≤1000，0<m≤n≤size，链表中每个节点的值满足 ∣val∣≤1000\
+> 要求：时间复杂度 O(n) ，空间复杂度 O(n)\
+> 进阶：时间复杂度 O(n)，空间复杂度 O(1)
+> 
+> ### 示例1
+> 输入：{1,2,3,4,5},2,4 \
+> 返回值：{1,4,3,2,5}\
+> 
+> ### 示例2
+> 输入：{5},1,1\
+> 返回值：{5}\
+> 说明：空链表则输出空 
 
 ---
 ## 解题思路
 ---
-### 使用方法：双指针
+### 使用方法：迭代法
 ---
 ### 题目关键信息
 
