@@ -1,23 +1,39 @@
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+#
+# 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+#
+# 
+# @param head ListNode类 
+# @param m int整型 
+# @param n int整型 
+# @return ListNode类
+#
 class Solution:
-    def ReverseList(self , head: ListNode) -> ListNode:
+    def reverseBetween(self , head: ListNode, m: int, n: int) -> ListNode:
         # write code here
-        # 优先处理空链表，即空链表不需要处理
-        if not head:
-            return None
+        # 链表前新加一个表头
+        newhead = ListNode(-1)
+        newhead.next = head
 
-        # 设置两个指针，一个指向当前节点的指针，一个指向上一个节点的指针，初始设置为空
+        # 当前节点
         cur = head
-        pre = None
+        # 前序节点
+        pre = newhead
 
-        # 遍历整个链表，每到一个节点，
-        while cur:
-            # 断开链表，但是要记录后一个节点
-            temp = cur.next
-            # 当前的next指向前一个
-            cur.next = pre
-            # 前一个更新为当前
+        # 找到m 
+        for i in range (1,m):
             pre = cur
-            # 当前更新为刚刚记录的后一个 
-            cur = temp
+            cur = cur.next
 
-        return pre
+        # 从m开始反转
+        for i in range (m,n):
+            temp = cur.next
+            cur.next = temp.next
+            temp.next = pre.next
+            pre.next = temp
+
+        # 去掉表头
+        return newhead.next

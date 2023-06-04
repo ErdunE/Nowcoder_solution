@@ -28,8 +28,59 @@
 ---
 ### 题目关键信息
 
+将一个节点数为 size 链表 m 位置到 n 位置之间的区间反转\
+链表其他部分不变，返回头节点
+
 ---
 ### 解题步骤
+
+1. 链表前新加一个表头，后续输出结果时候去掉即可，这样做是防止如果从链表头的位置开始反转，在多了一个表头的情况下就能保证第一个节点永远不会被反转，不会到后面去
+2. 使用两个指针，一个指向当前节点，一个指向前序节点
+3. 依次遍历链表，直到第m个位置
+4. 对于m到n中的节点，依次断掉后续的指针，反转指针方向
+5. 返回链表，去掉表头
+
 ---
 
 ### 最终代码
+```
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+#
+# 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+#
+# 
+# @param head ListNode类 
+# @param m int整型 
+# @param n int整型 
+# @return ListNode类
+#
+class Solution:
+    def reverseBetween(self , head: ListNode, m: int, n: int) -> ListNode:
+        # write code here
+        # 链表前新加一个表头
+        newhead = ListNode(-1)
+        newhead.next = head
+
+        # 当前节点
+        cur = head
+        # 前序节点
+        pre = newhead
+
+        # 找到m 
+        for i in range (1,m):
+            pre = cur
+            cur = cur.next
+
+        # 从m开始反转
+        for i in range (m,n):
+            temp = cur.next
+            cur.next = temp.next
+            temp.next = pre.next
+            pre.next = temp
+
+        # 去掉表头
+        return newhead.next
+```
