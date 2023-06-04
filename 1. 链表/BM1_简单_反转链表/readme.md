@@ -1,16 +1,69 @@
 ## BM1 简单 反转链表
+题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
 
-#### 题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+> ### 描述
+> 给定一个单链表的头结点pHead(该头节点是有值的，比如在下图，它的val是1)，长度为n，反转该链表后，返回新链> 表的表头。
+> 
+> 数据范围： 0≤n≤1000\
+> 要求：空间复杂度 O(1) ，时间复杂度 O(n) 。
+> 
+> 如当输入链表{1,2,3}时，\
+> 经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。\
+> 以上转换过程如下图所示：\
+> ![img](https://uploadfiles.nowcoder.com/images/20211014/423483716_1634206291971/4A47A0DB6E60853DEDFCFDF08A5CA249)
+>
+> ### 示例1
+> 输入：{1,2,3}\
+> 返回值：{3,2,1}
+> 
+> ### 示例2
+> 输入：{}\
+> 返回值：{}\
+> 说明：空链表则输出空 
 
 ---
 ## 解题思路
----
-### 使用方法：双指针
----
-### 题目关键信息
 
+将整个链表反转，就是将每个节点的指针从向后变成向前\
+这样的话我们只需要遍历链表，将遇到的节点的指针一一逆向即可。
+
+---
+### 使用方法：迭代
 ---
 ### 解题步骤
----
 
+1. 优先处理空链表，即空链表不需要处理
+2. 设置两个指针，一个指向当前节点的指针，一个指向上一个节点的指针，初始设置为空
+3. 遍历整个链表，每到一个节点，断开当前节点与后面节点的指针，并用临时变量记录后一个节点，然后当前节点指向上一个节点，即所谓的指针逆向。
+4. 再轮换到当前指针的上一个指针，让他们进入到下一个节点及下一个节点的前序节点
+
+---
 ### 最终代码
+```
+class Solution:
+    def ReverseList(self , head: ListNode) -> ListNode:
+        # write code here
+        # 优先处理空链表，即空链表不需要处理
+        if not head:
+            return None
+
+        # 设置两个指针，一个指向当前节点的指针，一个指向上一个节点的指针，初始设置为空
+        cur = head
+        pre = None
+
+        # 遍历整个链表，每到一个节点，
+        while cur:
+            # 断开链表，但是要记录后一个节点
+            temp = cur.next
+            # 当前的next指向前一个
+            cur.next = pre
+            # 前一个更新为当前
+            pre = cur
+            # 当前更新为刚刚记录的后一个 
+            cur = temp
+
+        return pre
+        
+
+
+```
