@@ -1,4 +1,4 @@
-## **LeetCode_Solution**
+## **NowCoder_Solution**
 ### 目录
 1. [链表](https://github.com/ErdunE/Nowcoder_solution/tree/main#%E9%93%BE%E8%A1%A8)
 2. [二分查找/排序](https://github.com/ErdunE/Nowcoder_solution/tree/main#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%8E%92%E5%BA%8F)
