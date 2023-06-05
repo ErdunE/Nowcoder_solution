@@ -1,16 +1,72 @@
-## BM1 简单 反转链表
+## BM7 中等 链表中环的入口结点
 
-#### 题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+#### 题目链接 [BM7 中等 链表中环的入口结点](https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=295&tqId=23449&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295)
 
+> ### 描述
+> 给一个长度为n链表，若其中包含环，请找出该链表的环的入口结点，否则，返回null。\
+> 数据范围： n≤10000，1<=结点值<=10000\
+> 要求：空间复杂度 O(1)，时间复杂度 O(n)
+>
+> 例如，输入{1,2},{3,4,5}时，对应的环形链表如下图所示：
+> ![img](https://uploadfiles.nowcoder.com/images/20211025/423483716_1635154005498/DA92C945EF643F1143567935F20D6B46)
+> 可以看到环的入口结点的结点值为3，所以返回结点值为3的结点。
+>
+> #### 输入描述：
+> 输入分为2段，第一段是入环前的链表部分，第二段是链表环的部分，后台会根据第二段是否为空将这两段组装成一个无环或者有环单链表
+> #### 返回值描述：
+> 返回链表的环的入口结点即可，我们后台程序会打印这个结点对应的结点值；若没有，则返回对应编程语言的空结点即可。
+>
+> ### 示例1
+> 输入：{1,2},{3,4,5}\
+> 返回值：3\
+> 说明：返回环形链表入口结点，我们后台程序会打印该环形链表入口结点对应的结点值，即3   
+> ### 示例2
+> 输入：{1},{}\
+> 返回值："null"\
+> 说明：没有环，返回对应编程语言的空结点，后台程序会打印"null" 
+> ### 示例3
+> 输入：{},{2}\
+> 返回值：2\
+> 说明：环的部分只有一个结点，所以返回该环形链表入口结点，后台程序打印该结点对应的结点值，即2   
 ---
 ## 解题思路
 ---
-### 使用方法：双指针
+### 使用方法：HashSet
 ---
 ### 题目关键信息
+
+若其中包含环，请找出该链表的环的入口结点，否则，返回null。
 
 ---
 ### 解题步骤
 ---
 
+1. 设置HashSet
+2. 设置循环
+3. 如果节点不在HashSet中 加入Hashset并且节点往前移
+4. 如果节点在HashSet中，返回对应值
+5. 如果都不是 返回空
+
 ### 最终代码
+
+```
+class Solution:
+    def EntryNodeOfLoop(self, pHead):
+        # write code here
+        # 设置HashSet
+        node = set()
+
+        # 设置循环
+        while pHead:
+
+            # 如果节点在HashSet中，返回对应值
+            if pHead in node:
+                return pHead
+            # 如果节点不在HashSet中 加入Hashset并且节点往前移
+            else:
+                node.add(pHead)
+                pHead = pHead.next
+
+        # 如果都不是 返回空        
+        return None
+```
