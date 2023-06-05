@@ -1,16 +1,35 @@
-## BM1 简单 反转链表
+## BM8 简单 链表中倒数k个结点
 
-#### 题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+#### 题目链接 [BM8 简单 链表中倒数k个结点](https://www.nowcoder.com/practice/886370fe658f41b498d40fb34ae76ff9?tpId=295&tqId=1377477&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295)
+
+> ### 描述
+> 输入一个长度为 n 的链表，设链表中的元素的值为 ai ，返回该链表中倒数第k个节点。
+如果该链表长度小于k，请返回一个长度为 0 的链表。
+>
+> ![img](https://i.ibb.co/LR1DQ01/63ff25d05261280de480682e8e7c464.png) 
+> 
+> ### 示例1
+> 输入：{1,2,3,4,5},2\
+> 返回值：{4,5}
+> 说明：返回倒数第2个节点4，系统会打印后面所有的节点来比较。 
+> ### 示例2
+> 输入：{2},8\
+> 返回值：{}
 
 ---
 ## 解题思路
 ---
-### 使用方法：双指针
+### 使用方法：
 ---
 ### 题目关键信息
+
+
 
 ---
 ### 解题步骤
 ---
 
 ### 最终代码
+```
+
+```
