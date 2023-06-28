@@ -7,17 +7,49 @@
 ---
 ## 解题思路
 ---
-### 使用方法：
+### 使用方法：双指针
 ---
 ### 题目关键信息
 
-
+1. 数组arr长度为n
+2. 返回arr的最长无重复元素子数组的长度
 
 ---
 ### 解题步骤
 ---
 
+1. 设置右指针，结果，和临时用的数组
+2. 设置双循环，左指针遍历整个数组
+3. 右指针小与数组长度或右指针字符不在临时数组中间就一直向右循环
+4. 临时数组加入新的字符
+5. 右指针向右+1
+6. 更新结果，取当前值和新的数组值中的最大值
+7. 临时数组清空
+   
+
 ### 最终代码
 ```
+class Solution:
+    def maxLength(self , arr: List[int]) -> int:
+        # write code here
+
+        # 设置右指针，结果，和临时用的数组
+        right = 0
+        res = 0
+        tmp = set()
+
+        # 设置双循环，左指针遍历整个数组
+        for i in range(len(arr)):
+            # 右指针小与数组长度或右指针字符不在临时数组中间就一直向右循环
+            while right < len(arr) and arr[right] not in tmp:
+                # 临时数组加入新的字符
+                tmp.add(arr[right])
+                # 右指针向右+1
+                right = right + 1
+            # 更新结果，取当前值和新的数组值中的最大值
+            res = max(res, right - i)
+            # 临时数组清空
+            tmp.remove(arr[i])
+        return res
 
 ```
