@@ -7,17 +7,39 @@
 ---
 ## 解题思路
 ---
-### 使用方法：
+### 使用方法：双指针
 ---
 ### 题目关键信息
 
-
+1. 接受一个字符串
+2. 输出该字符串反转后的字符串
 
 ---
 ### 解题步骤
+1. 设置左右指针
+2. 两指针同时往中间靠 
+3. 交换左右指针的字符
 ---
 
 ### 最终代码
 ```
+class Solution:
+    def solve(self , str: str) -> str:
+        # write code here
 
+        # 设置左右指针
+        left = 0 
+        right = len(str) - 1
+
+        # 两指针同时往中间靠
+        while left < right:
+            res = list(str)
+            temp = res[left]
+            res[left] = res[right]
+            # 交换左右指针的字符
+            res[right] = temp
+            str = ''.join(res)
+            left = left + 1
+            right = right - 1
+        return str
 ```
