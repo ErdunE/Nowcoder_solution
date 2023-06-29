@@ -8,17 +8,49 @@
 ---
 ## 解题思路
 ---
-### 使用方法：
+### 使用方法：双指针
 ---
 ### 题目关键信息
-
-
+1. 给定一个整型数组，数组每个元素表示下图所示的每列灰色柱子高度，数值都是非负数
+2. 在雨水（图中蓝色部分）不超过边界的情况下，问最多能有多少蓝色的格子
+3. 数组以外的区域高度视为0
 
 ---
 ### 解题步骤
+1. 检查数组是否为空或小于1
+2. 设置结果变量，左右指针分别指向数组首尾，最大左右指针变量
+3. 判断当前左右指针最大值
+4. 较小一方指针开始向前移动并计算存雨量
 ---
 
 ### 最终代码
 ```
+class Solution:
+    def maxWater(self , arr: List[int]) -> int:
+        # write code here
 
+        # 检查数组是否为空或小于1
+        if len(arr) < 1:
+            return 0
+
+        # 设置结果变量，左右指针分别指向数组首尾，最大左右指针变量
+        res = 0
+        left = 0
+        right = len(arr) - 1
+        maxL = 0
+        maxR = 0
+
+        while left < right:
+            # 判断当前左右指针最大值
+            maxL = max(maxL, arr[left])
+            maxR = max(maxR, arr[right])
+            # 较小一方指针开始向前移动并计算存雨量
+            if maxL < maxR:
+                res = res + maxL - arr[left]
+                left = left + 1
+            else:
+                res = res + maxR - arr[right]
+                right = right - 1
+
+        return res
 ```
