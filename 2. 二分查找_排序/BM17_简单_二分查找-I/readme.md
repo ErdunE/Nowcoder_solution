@@ -1,16 +1,23 @@
-## BM1 简单 反转链表
+## BM17_简单_二分查找-I
 
-#### 题目链接 [BM1 反转链表](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&tqId=23286&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+#### 题目链接 [BM17_简单_二分查找-I](https://www.nowcoder.com/practice/d3df40bd23594118b57554129cadf47b?tpId=295&tqId=1499549&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
+
+![img](https://i.ibb.co/TktFbt6/20230705074008.png)
 
 ---
 ## 解题思路
 ---
-### 使用方法：双指针
+### 使用方法：
 ---
 ### 题目关键信息
+
+
 
 ---
 ### 解题步骤
 ---
 
 ### 最终代码
+```
+
+```
