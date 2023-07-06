@@ -1,28 +1,10 @@
-## BM20_中等_数组中的逆序对
-
-#### 题目链接 [BM20_中等_数组中的逆序对](https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5?tpId=295&tqId=23260&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
-
-![img](https://i.ibb.co/StynmhH/20230705074352.png)
-
----
-## 解题思路
----
-### 使用方法：
----
-### 题目关键信息
-1. 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
-2. 输入一个数组，求一个数组的全部逆序对，答案对1000000007取模
-3. 保证输入的数组中没有的相同的数字
-
-
----
-### 解题步骤
-不理解需要复查
-https://blog.nowcoder.net/n/55c9f7f11fb04ab29b38d4430a766912?f=comment
----
-
-### 最终代码
-```
+#
+# 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+#
+# 
+# @param nums int整型一维数组 
+# @return int整型
+#
 class Solution:
     mod = 1000000007
     def MergeSort(self, left: int, right: int, data: List[int], temp: List[int]) -> int:
@@ -57,4 +39,5 @@ class Solution:
         n = len(data)
         res = [0 for i in range(n)]
         return self.MergeSort(0, n - 1, data, res)
-```
+
+
