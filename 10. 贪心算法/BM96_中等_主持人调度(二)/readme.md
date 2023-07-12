@@ -2,7 +2,7 @@
 
 #### 题目链接 [BM96_中等_主持人调度(二)](https://www.nowcoder.com/practice/4edf6e6d01554870a12f218c94e8a299?tpId=295&tqId=1267319&ru=/exam/oj&qru=/ta/format-top101/question-ranking&sourceUrl=%2Fexam%2Foj)
 
-![img](https://i.ibb.co/N998s36/20230712102025.png)
+![img](https://i.ibb.co/689YJtL/20230712102125.png)
 
 ---
 ## 解题思路
