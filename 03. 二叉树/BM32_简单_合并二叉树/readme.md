@@ -8,19 +8,40 @@
 ---
 ## 解题思路
 ---
-### 使用方法：
+### 使用方法：二叉树递归
 ---
 ### 题目关键信息
 
-1. 
+1. 合并（相加）二叉树位置相同的节点
+2. 缺少的节点用另一棵树来补，若都缺则返回NULL
 
 ---
 ### 解题步骤
 
-1. 
+1. 首先判断t1与t2是否为空，若为则用另一个代替，若都为空，返回的值也是空。
+2. 然后依据前序遍历的特点，优先访问根节点，将两个根点的值相加创建到新树中。
+3. 两棵树再依次同步进入左子树和右子树。
 ---
 
 ### 最终代码
 ```
+import java.util.*;
+public class Solution {
+    public TreeNode mergeTrees (TreeNode t1, TreeNode t2) {
+        // write code here
+        //若只有一个节点返回另一个，两个都为null自然返回null
+        if(t1 == null){
+            return t2;
+        }
+        if(t2 == null){
+            return t1;
+        }
+        //根左右的方式递归
+        TreeNode head = new TreeNode(t1.val + t2.val);
+        head.left = mergeTrees(t1.left, t2.left);
+        head.right = mergeTrees(t1.right, t2.right);
 
+        return head;
+    }
+}
 ```
